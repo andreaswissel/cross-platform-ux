@@ -1,0 +1,27 @@
+@import 'colors';
+
+nav {
+  ul {
+    padding: 0 10%;
+
+    li {
+      font: 500 18px "Source Sans Pro";
+      color: #333;
+
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      margin: 20px 0;
+      list-style: none;
+
+      i.material-icons {
+        font-size: 20px;
+        margin-right: 20px;
+      }
+
+      &:hover {
+        color: $primary-highlight;
+      }
+    }
+  }
+}

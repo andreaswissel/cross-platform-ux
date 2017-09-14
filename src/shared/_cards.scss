@@ -1,0 +1,141 @@
+@import "colors";
+
+app-card {
+  background: white;
+
+  min-width: 350px;
+  max-width: 500px;
+
+  box-shadow: 0 0 12px 0 rgba(0,0,0, .07);
+  flex: 1;
+  margin: 30px;
+  position: relative;
+
+  &:after {
+    content: '';
+
+    height: 50px;
+    width: 90%;
+
+    box-shadow: 0 10px 20px rgba(0,0,0, .07);
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    z-index: 8;
+  }
+
+  .header, .content, .footer {
+    position: relative;
+    z-index: 9;
+  }
+
+  .header {
+    background-image: linear-gradient( 135deg, #F761A1 10%, #8C1BAB 100%);
+
+    height: 150px;
+
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    padding: 10px 15px;
+
+    .image {
+      filter: blur(3px) brightness(85%);
+
+      height: 110%;
+      width: 110%;
+
+      position: absolute;
+      left: -5%;
+      top: -5%;
+      z-index: 9;
+    }
+
+    h1 {
+      font: 500 20px "SF Pro Display";
+      color: white;
+      text-shadow: 0 1px 1px rgba(0,0,0, .35);
+      text-transform: uppercase;
+
+      margin: 0;
+      position: relative;
+      z-index: 99;
+    }
+  }
+
+  .content {
+    font: normal 13px "Montserrat";
+    padding: 15px;
+
+    .organizer {
+      align-items: center;
+      display: flex;
+
+      .img {
+        height: 50px;
+        width: 50px;
+
+        border: 1px solid rgba(0,0,0, .35);
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .info {
+        padding: 5px 10px;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .meta {
+      height: 75px;
+
+      align-items: center;
+      border-top: 1px solid rgba(0,0,0, .07);
+      display: flex;
+      margin: 20px 0;
+      padding: 10px 0;
+
+      > div {
+        border-right: 1px solid rgba(0,0,0, .07);
+        text-align: center;
+
+        &:first-of-type { text-align: left; }
+        &:last-of-type {
+          border-right: 0;
+          text-align: right;
+        }
+
+        strong {
+          display: block;
+        }
+      }
+    }
+
+    p {
+      color: #333;
+
+      padding: 0;
+    }
+
+    strong {
+      color: $primary-highlight;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .footer {
+    background-color: white;
+
+    padding: 15px 15px 35px 15px;
+
+    button {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+}

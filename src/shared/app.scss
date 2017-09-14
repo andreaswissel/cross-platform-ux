@@ -1,0 +1,16 @@
+@import 'buttons';
+@import 'cards';
+@import 'drawer';
+@import 'global';
+@import 'navigation';
+@import 'user';
+@import 'top-bar';
+
+app-root {
+  width: 100%;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding-top: 60px;
+}

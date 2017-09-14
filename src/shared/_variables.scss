@@ -1,0 +1,28 @@
+$phone-min: 320px;
+$phone-max: 599px;
+
+$tablet-min: 600px;
+$tablet-max: 1024px;
+
+$desktop-min: 1024px;
+$desktop-max: 1600px;
+
+@mixin breakpoint($platform: desktop) {
+  @if $platform == desktop {
+    @media only screen and(min-width: $desktop-min) and(max-width: $desktop-max) {
+      @content
+    }
+  }
+
+  @if $platform == tablet {
+    @media only screen and(min-width: $tablet-min) and(max-width: $tablet-max) {
+      @content
+    }
+  }
+
+  @if $platform == phone {
+    @media only screen and(min-width: $phone-min) and(max-width: $phone-max) {
+      @content
+    }
+  }
+}

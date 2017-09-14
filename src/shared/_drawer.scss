@@ -1,0 +1,26 @@
+@import 'variables';
+
+app-drawer {
+  background: white;
+
+  width: 300px;
+
+  box-shadow: 3px 0 12px 0 rgba(0,0,0, .07);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  top: 60px;
+  transform: translate3d(-300px,0,0);
+  transition: .3s transform ease-in-out;
+  z-index: 999;
+
+  @include breakpoint('phone') {
+    width: 100%;
+
+    transform: translate3d(-100%,0,0);
+  }
+
+  &.active {
+    transform: translate3d(0, 0, 0);
+  }
+}

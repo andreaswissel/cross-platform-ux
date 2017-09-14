@@ -1,0 +1,86 @@
+$top-bar-height: 54px;
+$hamburger-line-stroke-width: 2px;
+
+app-top-bar {
+  background-image: linear-gradient(90deg, #423197, #3D6394);
+
+  height: $top-bar-height;
+
+  align-items: center;
+  display: flex;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+
+  h1 {
+    font: 400 18px "Montserrat";
+    color: white;
+
+    display: flex;
+    margin: 0 auto;
+  }
+
+  button {
+    background: transparent;
+
+    height: 60px;
+    width: 60px;
+
+    border: 0;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.hamburger {
+  height: 100%;
+  width: 100%;
+
+  position: relative;
+
+  .line {
+    background: white;
+
+    height: $hamburger-line-stroke-width;
+    width: 24px;
+
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -12.5px;
+    margin-top: -1.5px;
+    transition: transform 200ms;
+  }
+
+  .line-1 {
+    transform: translate3d(0, -7px, 0);
+  }
+
+  .line-2 {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .line-3 {
+    transform: translate3d(0, 7px, 0);
+  }
+
+  &.close {
+    .line-1 {
+      transform: translate3d(-8px, -6px, 0) rotate(-45deg) scale(0.75);
+    }
+
+    .line-2 {
+      transform: translate3d(0, 0, 0) scale(1, 1);
+    }
+
+    .line-3 {
+      transform: translate3d(-8px, 6px, 0) rotate(45deg) scale(0.75);
+    }
+  }
+}

@@ -1,20 +1,76 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.com/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<app-top-bar [navigationDrawer]="navigationDrawer"></app-top-bar>
+<app-drawer #navigationDrawer>
+  <app-user></app-user>
+  <nav>
+    <ul>
+      <li>
+        <i class="material-icons">home</i>
+        Home
+      </li>
+      <li>
+        <i class="material-icons">settings</i>
+        Settings
+      </li>
+    </ul>
+  </nav>
+</app-drawer>
+<app-extendable-fab>
+  <button class="fab">
+    <i class="material-icons">favorite</i>
+  </button>
+  <button class="fab">
+    <i class="material-icons">grade</i>
+  </button>
+  <button class="fab">
+    <i class="material-icons">lightbulb_outline</i>
+  </button>
+</app-extendable-fab>
+<app-card *ngFor="let card of dummyCards; let i = index">
+  <div class="header">
+    <div class="image" *ngIf="i % 2 == 0">
+      <img src="assets/bg.jpg" width="100%">
+    </div>
+    <h1>{{ card.title }}</h1>
+  </div>
+  <div class="content">
+    <div class="organizer">
+      <div class="flex two-thirds">
+        <div class="img">
+          <img src="assets/bg.jpg" alt="" height="100%">
+        </div>
+        <div class="info">
+          <p>
+            by <strong>inovex</strong>
+          </p>
+          <small>
+            3 days ago
+          </small>
+        </div>
+      </div>
+      <button class="primary">
+        RSVP
+      </button>
+    </div>
+    <div class="meta">
+      <div class="third">
+        <strong>Date</strong>
+        Fri, May 26th
+      </div>
+      <div class="third">
+        <strong>Location</strong>
+        Karlsruhe, DE
+      </div>
+      <div class="third">
+        <strong>RSVPs</strong>
+        86 are going
+      </div>
+    </div>
+    <div class="summary">
+      <strong>Summary</strong>
+      <p>{{ card.content }}</p>
+    </div>
+  </div>
+  <div class="footer">
+    <button class="secondary">details</button>
+  </div>
+</app-card>

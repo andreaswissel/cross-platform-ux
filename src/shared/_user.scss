@@ -1,0 +1,37 @@
+@import 'colors';
+
+app-user {
+  display: flex;
+  margin: 30px 0 50px 0;
+  padding: 0 10%;
+
+  .img {
+    height: 64px;
+    width: 64px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .info {
+    padding: 10px 0 0 20px;
+
+    h1 {
+      font: normal 20px "Montserrat";
+      color: $primary-highlight;
+
+      margin: 0;
+    }
+
+    h2 {
+      font: normal 15px "Source Sans Pro";
+      color: #333;
+
+      margin: 0;
+    }
+  }
+}

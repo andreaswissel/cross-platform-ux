@@ -1,8 +1,21 @@
 @import 'colors';
 
 nav {
-  ul {
+  h1 {
+    font: bold 14px "Montserrat";
+    color: #333;
+    text-transform: uppercase;
+
     padding: 0 10%;
+  }
+
+  ul {
+    margin-bottom: 50px;
+    padding: 0 10%;
+
+    &.favorites {
+      li i { color: red; }
+    }
 
     li {
       font: 500 18px "Source Sans Pro";
